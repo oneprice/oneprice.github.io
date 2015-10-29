@@ -37,20 +37,24 @@
 				return check;
 			}
 
-			image_resize = function() {
-				check = mobilecheck();
-				if (check) {
-					var element = document.getElementsByTagName("img")[0];
-					element.style.maxWidth = "none";
-				}
-			}
+			image_resize = function () {
+            var check = mobilecheck();
+            var element = document.getElementById("img_main");
+            if (check) {
+                element.style.maxWidth = "none";
+                element.style.width = "100%";
+                element.src = "oneprice_mobile.png";
+            } else {
+                element.src = "oneprice_pc.png";
+            }
+        }
 		</script>
 	</head>
 	<body onload="image_resize()">
 		<div class="outer">
 			<div class="middle">
 				<div class="inner">
-					<a href="mailto:hello@oneprice.co.kr?subject=[원프라이스 문의]"><img src="main.png" border="0"></a>
+					<a href="mailto:hello@oneprice.co.kr?subject=[원프라이스 문의]"><img id="img_main" src="main.png" border="0"></a>
 				</div>
 			</div>
 		</div>
